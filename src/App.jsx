@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Navbar from './component/Navbar'
 import Productdata from './component/Productdata'
 import data from '../utils/Data'
+import Footer from './component/Footer'
 
 const App = () => {
  
@@ -9,11 +10,11 @@ const App = () => {
     <div className='h-screen w-full flex flex-col items-center  '>
       <Navbar/>
      <div className='flex flex-col items-center pt-20'>
-      <img className='w-[85%] ' src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=2700/layout-engine/2026-01/Frame-1437256605-2-2.jpg" alt="" />
+      <img className='w-[85%] hover:scale-[1.025]' src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=2700/layout-engine/2026-01/Frame-1437256605-2-2.jpg" alt="" />
       <div className='w-[85%] mt-4 ml-8 flex items-center justify-start gap-5'>
-        <img className='w-[26%]' src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/pharmacy-WEB.jpg" alt="" />
-        <img className='w-[26%]' src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2026-01/pet_crystal_WEB-1.png" alt="" />
-         <img className='w-[26%]' src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2026-01/baby_crystal_WEB-1.png" alt="" />
+        <img className='w-[26%] hover:scale-[1.025]' src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/pharmacy-WEB.jpg" alt="" />
+        <img className='w-[26%] hover:scale-[1.025]' src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2026-01/pet_crystal_WEB-1.png" alt="" />
+         <img className='w-[26%] hover:scale-[1.025]' src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2026-01/baby_crystal_WEB-1.png" alt="" />
       </div>
      </div>
      <div className='w-[85%] mt-4 flex flex-wrap'>
@@ -38,7 +39,7 @@ const App = () => {
         "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-19.png",
         "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-20.png"].map((value)=>{
           return(
-               <img className='w-[10%]'  src={value} alt="" />
+               <img className='w-[10%] hover:scale-[1.025]'  src={value} alt="" />
           )
         })}
      </div>
@@ -48,8 +49,13 @@ const App = () => {
           <Productdata product={data[index]}/>
         )
       })}
+
+      <Footer/>
     </div>
+
+    
   )
+  
 }
  
 export default App
