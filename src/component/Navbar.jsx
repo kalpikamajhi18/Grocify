@@ -14,7 +14,7 @@ const Navbar = (props) => {
             </div>
             <input onClick={() => { navigate('/s') }} type="text" placeholder='Search...' className='cursor-pointer w-[40%] flex items-start justify-start bg-[#F8F8F8] px-[20px] py-[13px] border border-[#E5E5E5] rounded-xl ' />
             <a href="" className='text-xl font-xl text-neutral-600'>Login</a>
-            <button className={`flex items-center justify-center gap-2 text-white font-medium text-[18px] px-[15px] py-[10px] ${props.items===0? 'bg-[#E5E5E5] hover:bg-neutral-300 ': 'bg-[#318616] hover:bg-[#007400]' }  rounded-lg`}><BsCart2 /> My cart <p className=' flex items-center justify-center h-6 w-6 text-sm rounded-full text-[#318616] bg-neutral-300'>{props.items}</p>
+            <button onClick={() => { navigate('/cart') }} className={`flex items-center justify-center gap-2 text-white font-medium text-[18px] px-[15px] py-[10px] ${props.items===0? 'bg-[#E5E5E5] hover:bg-neutral-300 ': 'bg-[#318616] hover:bg-[#007400]' }  rounded-lg`}><BsCart2 /> My cart <p className=' flex items-center justify-center h-6 w-6 text-sm rounded-full text-[#318616] bg-neutral-300'>{props.items}</p>
             {props.price>0? <span className='text-white'>{props.price}/- </span>:<></>} </button>
         </div>
     )

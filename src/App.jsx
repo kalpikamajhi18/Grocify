@@ -9,7 +9,7 @@ import Product from './pages/Product'
 
 const App = () => {
  let navigate = useNavigate()
- const{items,setItems,price,setPrice} = useOutletContext()
+ const{items,setItems,price,setPrice,addtocart,removefromcart} = useOutletContext()
 const[data,setData] = useState([])
 useEffect(()=>{
   let fetchdata = async ()=>{
@@ -61,7 +61,7 @@ useEffect(()=>{
 
       {data.map((val,index)=>{
         return(
-          <Productdata key={index} product={val} items={items} setItems={setItems} price={price} setPrice={setPrice}/>
+          <Productdata key={index} product={val} items={items} setItems={setItems} price={price} setPrice={setPrice} addtocart={addtocart} removefromcart={removefromcart}/>
         )
       })}
 

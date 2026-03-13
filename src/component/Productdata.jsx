@@ -17,7 +17,7 @@ const Productdata = (props) => {
          
         { props.product.card.map((value,indx)=>{
             return(
-              <Productcard key={indx} data={value} items={props.items} setItems={props.setItems} price={props.price} setPrice={props.setPrice}/>  
+              <Productcard key={indx} data={value} items={props.items} setItems={props.setItems} price={props.price} setPrice={props.setPrice} addtocart={props.addtocart} removefromcart={props.removefromcart}/>  
             )
         })}
     </div>

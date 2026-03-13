@@ -13,11 +13,13 @@ const Productcard = (props) => {
     setCount(count+1)
           props.setItems(props.items + 1) 
           props.setPrice(Number(props.price)+Number(props.data.price))
+          props.addtocart(props.data.id)
   }
   let handleminus = ()=>{
      setCount(count-1)
     props.setItems(props.items-1)
     props.setPrice(Number(props.price)-Number(props.data.price))
+    props.removefromcart(props.data.id)
   }
   return (
     <div className='w-[12em] h-[41vh] flex flex-col items-center px-4 pb-2 rounded-lg border border-[#E5E5E5] '>
