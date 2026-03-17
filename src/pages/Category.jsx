@@ -4,7 +4,7 @@ import Productcard from '../component/Productcard'
 import { useOutletContext } from 'react-router-dom'
 
 const Category = () => {
-     const{items,setItems,price,setPrice} = useOutletContext()
+     const{items,setItems,price,setPrice,addtocart,removefromcart} = useOutletContext()
     let id = JSON.parse(localStorage.getItem("prod_id"))
       const[data,setData] = useState({})
 
@@ -23,7 +23,7 @@ const Category = () => {
         <br />
         <div className='flex flex-wrap gap-5'>
             {!data?.card? <></>: data.card.map((val,indx)=>{
-                 return <Productcard key={indx} data={val} items={items} setItems={setItems} price={price} setPrice={setPrice}/>
+                 return <Productcard key={indx} data={val} items={items} setItems={setItems} price={price} setPrice={setPrice} addtocart={addtocart} removefromcart={removefromcart}/>
             })}
 
         </div>

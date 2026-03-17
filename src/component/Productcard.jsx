@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FaMinus } from 'react-icons/fa';
 import { FiMinus } from 'react-icons/fi';
 import { GrFormClock } from "react-icons/gr";
@@ -6,11 +6,27 @@ import { IoMdAdd } from 'react-icons/io';
 import { useNavigate } from 'react-router-dom';
 
 const Productcard = (props) => {
+   let productsData = JSON.parse(localStorage.getItem("products"))
+
+
   let navigate = useNavigate()
  const[count,setCount] = useState(0)
 
+   useEffect(()=>{
+        let product = productsData.find((value)=>{
+            return props.data.id === value.prod_id
+        })
+
+        if(product){
+            setCount(product.quantity)
+        }
+        else{
+            setCount(0)
+        }
+    },[productsData])
+
   let handleadd = ()=>{
-    setCount(count+1)
+         setCount(count+1)
           props.setItems(props.items + 1) 
           props.setPrice(Number(props.price)+Number(props.data.price))
           props.addtocart(props.data.id)

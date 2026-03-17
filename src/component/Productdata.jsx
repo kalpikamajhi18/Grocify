@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom'
 
 const Productdata = (props) => {
   let navigate = useNavigate()
+
+  
   return (
      <div className='h-[50vh] w-[85%] mt-8 flex flex-col gap-3 items-center justify-center '>
         <div className='flex items-center w-full justify-between'>

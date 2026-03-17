@@ -8,7 +8,7 @@ import Product from './pages/Product'
 
 
 const App = () => {
- let navigate = useNavigate()
+ 
  const{items,setItems,price,setPrice,addtocart,removefromcart} = useOutletContext()
 const[data,setData] = useState([])
 useEffect(()=>{
