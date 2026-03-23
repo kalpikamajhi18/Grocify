@@ -8,7 +8,7 @@ import Product from './pages/Product'
 
 
 const App = () => {
- 
+ let navigate = useNavigate()
  const{items,setItems,price,setPrice,addtocart,removefromcart} = useOutletContext()
 const[data,setData] = useState([])
 useEffect(()=>{
@@ -24,12 +24,22 @@ useEffect(()=>{
   return (
     <div className='min-h-screen w-full flex flex-col items-center  '>
       
-     <div className='flex flex-col items-center pt-20'>
-      <img onClick={()=>{navigate('/product')}} className='curson-pointer w-[85%] hover:scale-[1.025]' src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=2700/layout-engine/2026-01/Frame-1437256605-2-2.jpg" alt="" />
+     <div className='flex flex-col mt-[20px] items-center pt-20'>
+   
+      <div className='h-[15em] w-[82%] rounded-2xl pl-[13px] ml-[-15px] overflow-hidden '>
+                <img onClick={()=>{navigate('/product')}} className='curson-pointer w-full h-full object-cover scale-[1.06]' src="/grocify banner 1.png" alt="" /> 
+      </div>
       <div className='w-[85%] mt-4 ml-8 flex items-center justify-start gap-5'>
-        <img onClick={()=>{navigate('/product')}} className='curson-pointer w-[26%] hover:scale-[1.025]' src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/pharmacy-WEB.jpg" alt="" />
-        <img onClick={()=>{navigate('/product')}} className='curson-pointer w-[26%] hover:scale-[1.025]' src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2026-01/pet_crystal_WEB-1.png" alt="" />
-         <img onClick={()=>{navigate('/product')}} className='curson-pointer w-[26%] hover:scale-[1.025]' src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2026-01/baby_crystal_WEB-1.png" alt="" />
+        {/* <img onClick={()=>{navigate('/product')}} className='curson-pointer w-[26%] hover:scale-[1.025]' src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/pharmacy-WEB.jpg" alt="" /> */}
+        <div className='w-[26%] h-full rounded-2xl overflow-hidden  bg-amber-700'>
+                  <img onClick={()=>{navigate('/product')}} className='curson-pointer w-full  h-full hover:scale-[1.025]' src="/banner11.png" alt="" /> 
+        </div>
+        <div className='w-[26%] h-full rounded-2xl overflow-hidden  bg-amber-700'>
+                  <img onClick={()=>{navigate('/product')}} className='curson-pointer w-full  h-full hover:scale-[1.025]' src="/banner3.png" alt="" /> 
+        </div>
+          <div className='w-[26%] h-full rounded-2xl overflow-hidden bg-amber-700'>
+                  <img onClick={()=>{navigate('/product')}} className='curson-pointer w-full  h-full hover:scale-[1.025]' src="/banner4.png" alt="" /> 
+        </div>
       </div>
      </div>
      <div className='w-[85%] mt-4 flex flex-wrap'>

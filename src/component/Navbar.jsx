@@ -1,22 +1,84 @@
 import React from 'react'
 import { CiSearch } from "react-icons/ci";
-import { BsCart2 } from "react-icons/bs";
+import { BsCart2, BsSearch } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
 const Navbar = (props) => {
     let navigate = useNavigate()
     return (
-        <div className='w-full h-22 bg-[#FCFCFC] flex items-center justify-between px-6 border-b border-[#E5E5E5] overflow-hidden fixed'>
-            <img onClick={() => { navigate('/') }} className='w-[10%]' src="data:image/png;base64,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" alt="" />
-            <div className='flex flex-col items-start justify-center gap-0.3 '>
-                <h1 className='font-bold text-lg'>Delivery in 12 minutes</h1>
-                <p>4VQG+69M, Lalanda Vihar Tilw...
-                </p>
-            </div>
-            <input onClick={() => { navigate('/s') }} type="text" placeholder='Search...' className='cursor-pointer w-[40%] flex items-start justify-start bg-[#F8F8F8] px-[20px] py-[13px] border border-[#E5E5E5] rounded-xl ' />
-            <a href="" className='text-xl font-xl text-neutral-600'>Login</a>
-            <button onClick={() => { navigate('/cart') }} className={`flex items-center justify-center gap-2 text-white font-medium text-[18px] px-[15px] py-[10px] ${props.items===0? 'bg-[#E5E5E5] hover:bg-neutral-300 ': 'bg-[#318616] hover:bg-[#007400]' }  rounded-lg`}><BsCart2 /> My cart <p className=' flex items-center justify-center h-6 w-6 text-sm rounded-full text-[#318616] bg-neutral-300'>{props.items}</p>
-            {props.price>0? <span className='text-white'>{props.price}/- </span>:<></>} </button>
+  <div className="w-full h-[85px] bg-white shadow-sm border-b border-neutral-200 flex items-center justify-between px-10 fixed top-0 z-50">
+
+      {/* LEFT: Logo + Location */}
+      <div className="flex items-center gap-6">
+
+        {/* Logo */}
+        <div
+          onClick={() => navigate("/")}
+          className="flex items-center gap-2 cursor-pointer"
+        >
+          <img src="/logo.png" className="w-21" alt="logo" />
+          <h1 className="text-xl font-bold text-green-700 ">Grocify</h1>
         </div>
+
+        {/* Divider */}
+        <div className="h-8 w-[1px] bg-gray-300"></div>
+
+        {/* Location */}
+        <div className="flex flex-col leading-tight cursor-pointer">
+          <span className="text-xs text-gray-500">Deliver to</span>
+          <span className="text-sm font-semibold text-gray-800">
+            Lalanda Vihar Tilwara...
+          </span>
+        </div>
+      </div>
+
+      {/* CENTER: Search */}
+      <div className="w-[40%] relative ">
+        <BsSearch className="absolute left-4 top-4.5 text-gray-400" />
+
+        <input
+          onClick={() => navigate("/s")}
+          type="text"
+          placeholder="Search for groceries, fruits, vegetables..."
+          
+          className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 bg-gray-50 focus:outline-none focus:border-green-500 cursor-pointer"
+        />
+      </div>
+
+      {/* RIGHT: Actions */}
+      <div className="flex items-center gap-5">
+
+        {/* Login */}
+        <button className="text-gray-700 font-medium hover:text-green-600 transition">
+          Login
+        </button>
+
+        {/* Cart */}
+        <button
+          onClick={() => navigate("/cart")}
+          className={`flex items-center gap-3 px-4 py-2 rounded-lg transition ${
+            props.items === 0
+              ? "bg-gray-200 text-gray-500"
+              : "bg-green-600 hover:bg-green-700 text-white"
+          }`}
+        >
+          <BsCart2 className="text-lg" />
+
+          <div className="flex flex-col items-start leading-tight">
+            <span className="text-xs">My Cart</span>
+            <span className="text-sm font-semibold">
+              {props.items} items
+            </span>
+          </div>
+
+          {/* Price */}
+          {props.price > 0 && (
+            <span className="ml-2 text-sm font-bold">
+              ₹{props.price}
+            </span>
+          )}
+        </button>
+      </div>
+    </div>
     )
 }
 

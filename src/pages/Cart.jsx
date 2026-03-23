@@ -4,7 +4,7 @@ import Productcard from '../component/Productcard'
 import CartproductData from '../component/CartproductData'
 
 const Cart = () => {
-  const { items, setItems, price, setPrice, productdata, addToCart, removeFromCart } = useOutletContext()
+  const { items, setItems, price, setPrice, productdata, addtocart, removefromcart } = useOutletContext()
   const [products, setProducts] = useState([])
 
   let filterData = (arr) => {
@@ -43,9 +43,12 @@ const Cart = () => {
 
   return (
    <div className='flex flex-col p-20'>
-      {products.map((value)=>{
-        return <CartproductData items={items} setItems={setItems} data={value} price={price} setPrice={setPrice} addToCart={addToCart} removeFromCart={removeFromCart}/>
+    
+     <div className='flex flex-col items-center justify-center gap-4 mt-20'>
+       {products.map((value,index)=>{
+        return <CartproductData key={index} items={items} setItems={setItems} data={value} price={price} setPrice={setPrice} addtocart={addtocart} removefromcart={removefromcart} />
       })}
+     </div>
     </div>
   )
 }
