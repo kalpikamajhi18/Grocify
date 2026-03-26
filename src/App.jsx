@@ -24,7 +24,7 @@ useEffect(()=>{
   return (
     <div className='min-h-screen w-full flex flex-col items-center  '>
       
-     <div className='flex flex-col mt-[20px] items-center pt-20'>
+     <div className='flex flex-col mt-[40px] items-center pt-20'>
    
       <div className='h-[15em] w-[82%] rounded-2xl pl-[13px] ml-[-15px] overflow-hidden '>
                 <img onClick={()=>{navigate('/product')}} className='curson-pointer w-full h-full object-cover scale-[1.06]' src="/grocify banner 1.png" alt="" /> 

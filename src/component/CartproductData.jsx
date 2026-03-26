@@ -5,42 +5,71 @@ import { MdAdd } from 'react-icons/md'
 const CartproductData = (props) => {
 
     const [data, setData] = useState(props.data)
+
     useEffect(() => {
         setData(props.data)
     }, [props.data])
 
-  return (
-        <div className='pr-10 flex h-24 w-full justify-between items-center rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300'>
-            <div className='flex h-full w-full gap-4 items-center'>
-                <div className='h-full w-[8%] p-5'>
-                        <img src={data.img} className='h-full w-full object-cover' alt="" />
-                </div>
-                <div>
-                      <div>{data.desc}</div>
-                        <div>{data.quantity}</div>
-                </div>
+    return (
+        <div className='p-3 sm:p-4 flex flex-col sm:flex-row gap-4 sm:gap-0 w-full justify-between items-start sm:items-center rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300'>
+
+            {/* LEFT SECTION */}
+            <div className='flex w-full sm:w-auto gap-3 sm:gap-4 items-center'>
+
+                {/* IMAGE */}
+                <div className='h-16 w-16 sm:h-20 sm:w-20 flex-shrink-0'>
+                    <img
+                        src={data.img}
+                        className='h-full w-full object-cover rounded-lg'
+                        alt=""
+                    />
                 </div>
 
-                 <div className='flex flex-col gap-2'>
-                <button className='inline-flex items-center gap-1 px-3 py-1.5 text-xs font-bold border border-white rounded-lg bg-[#007400] text-white transition-colors cursor-pointer'>
-                          <FaMinus onClick={() => {
-                        props.setItems(props.items - 1)
-                       
-                        props.setPrice(Number(props.price) - Number(data.price))
-                        props.removefromcart(data.id)
-                    }} className='text-sm' />
+                {/* TEXT */}
+                <div className='flex flex-col'>
+                    <div className='text-sm sm:text-base font-medium line-clamp-2'>
+                        {data.desc}
+                    </div>
+                    <div className='text-xs sm:text-sm text-gray-500'>
+                        {data.quantity}
+                    </div>
+                </div>
+            </div>
+
+            {/* RIGHT SECTION */}
+            <div className='flex w-full sm:w-auto justify-between sm:justify-end items-center gap-4 sm:gap-6'>
+
+                {/* COUNTER */}
+                <button className='inline-flex items-center gap-2 px-3 py-1.5 text-xs sm:text-sm font-bold rounded-lg bg-[#007400] text-white'>
+
+                    <FaMinus
+                        onClick={() => {
+                            props.setItems(props.items - 1)
+                            props.setPrice(Number(props.price) - Number(data.price))
+                            props.removefromcart(data.id)
+                        }}
+                        className='cursor-pointer'
+                    />
+
                     {data.count}
-                    <MdAdd onClick={() => {
-                        props.setItems(props.items + 1)
-                         
-                        props.setPrice(Number(props.price) + Number(data.price))
-                        props.addtocart(data.id)
-                    }} className='text-sm' />
+
+                    <MdAdd
+                        onClick={() => {
+                            props.setItems(props.items + 1)
+                            props.setPrice(Number(props.price) + Number(data.price))
+                            props.addtocart(data.id)
+                        }}
+                        className='cursor-pointer'
+                    />
                 </button>
-                    <div className='font-bold'>₹{Number(data.price) * Number(data.count)}</div>
+
+                {/* PRICE */}
+                <div className='font-bold text-sm sm:text-base whitespace-nowrap'>
+                    ₹{Number(data.price) * Number(data.count)}
+                </div>
             </div>
         </div>
-  )
+    )
 }
 
 export default CartproductData
