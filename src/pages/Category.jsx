@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Productcard from '../component/Productcard'
 import { useOutletContext } from 'react-router-dom'
+import data from '../../utils/Data.js'
 
 const Category = () => {
 
